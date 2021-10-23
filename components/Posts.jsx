@@ -1,7 +1,7 @@
 import React from 'react';
 import { useCollection } from 'react-firebase-hooks/firestore';
-import { db } from '../firebase';
-import Post from './Post';
+import Post from './Post.jsx';
+import { db } from '../firebase.js';
 
 export default function Posts({ posts }) {
   const [realtimePosts] = useCollection(

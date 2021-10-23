@@ -1,7 +1,7 @@
 import React from 'react';
-import Stories from './Stories';
-import InputBox from './InputBox';
-import Posts from './Posts';
+import Stories from './Stories.jsx';
+import InputBox from './InputBox.jsx';
+import Posts from './Posts.jsx';
 
 export default function Feed({ posts }) {
   return (

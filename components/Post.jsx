@@ -5,11 +5,11 @@ import { ChatAltIcon, ShareIcon, ThumbUpIcon } from '@heroicons/react/outline';
 
 export default function Post({
   name,
-  image,
-  postImage,
-  timestamp,
   message,
   email,
+  postImage,
+  image,
+  timestamp,
 }) {
   return (
     <div className='flex flex-col'>

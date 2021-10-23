@@ -1,15 +1,16 @@
 import Head from 'next/head';
 import { getSession } from '../node_modules/next-auth/client';
-import { db } from '../firebase';
-
-import Header from '../components/Header';
-import Login from '../components/Login';
-import Sidebar from '../components/Sidebar';
-import Feed from '../components/Feed';
-import Widgets from '../components/Widgets';
+import Header from '../components/Header.jsx';
+import Login from '../components/Login.jsx';
+import Sidebar from '../components/Sidebar.jsx';
+import Feed from '../components/Feed.jsx';
+import Widgets from '../components/Widgets.jsx';
+import { db } from '../firebase.js';
 
 export default function Home({ session, posts }) {
-  if (!session) return <Login />;
+  if (!session) {
+    return <Login />;
+  }
 
   return (
     <div className='h-screen bg-gray-100 overflow-hidden'>

@@ -1,6 +1,6 @@
 import { DotsHorizontalIcon, VideoCameraIcon } from '@heroicons/react/solid';
 import { SearchIcon } from '@heroicons/react/outline';
-import Contact from './Contact';
+import Contact from './Contact.jsx';
 
 const contacts = [
   { src: 'https://links.papareact.com/f0p', name: 'Jeff Bezoz' },

@@ -1,17 +1,16 @@
 /* eslint-disable @next/next/no-img-element */
-import { useSession } from 'next-auth/client';
+import { useState, useRef } from 'react';
 import Image from 'next/image';
+import { useSession } from 'next-auth/client';
 import { EmojiHappyIcon } from '@heroicons/react/outline';
 import { CameraIcon, VideoCameraIcon } from '@heroicons/react/solid';
-import { useRef, useState } from 'react';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/firestore';
 import 'firebase/compat/auth';
 import 'firebase/compat/storage';
-
 import { db, storage } from '../firebase.js';
 
-function InputBox() {
+export default function InputBox() {
   const [session] = useSession();
   const inputRef = useRef(null);
   const filePickerRef = useRef(null);
@@ -20,7 +19,9 @@ function InputBox() {
   const sendPost = e => {
     e.preventDefault();
 
-    if (!inputRef.current.value) return;
+    if (!inputRef.current.value) {
+      return;
+    }
 
     db.collection('posts')
       .add({
@@ -41,7 +42,7 @@ function InputBox() {
           uploadTask.on(
             'state_change',
             null,
-            error => console.error(error),
+            err => console.error(err),
             () => {
               // when upload is done.
               storage
@@ -60,9 +61,9 @@ function InputBox() {
           );
         }
       });
-
     inputRef.current.value = '';
   };
+
   const addImageToPost = e => {
     const reader = new FileReader();
     if (e.target.files[0]) {
@@ -144,5 +145,3 @@ function InputBox() {
     </div>
   );
 }
-
-export default InputBox;
