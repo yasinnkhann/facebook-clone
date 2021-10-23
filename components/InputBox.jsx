@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import { useState, useRef } from 'react';
 import Image from 'next/image';
 import { useSession } from 'next-auth/client';
