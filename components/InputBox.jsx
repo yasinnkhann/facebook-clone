@@ -7,7 +7,7 @@ import firebase from 'firebase/compat/app';
 import 'firebase/compat/firestore';
 import 'firebase/compat/auth';
 import 'firebase/compat/storage';
-import { db, storage } from '../firebase.js';
+import { db, storage } from '../firebaseConfig.js';
 
 export default function InputBox() {
   const [session] = useSession();

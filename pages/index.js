@@ -5,7 +5,7 @@ import Login from '../components/Login.jsx';
 import Sidebar from '../components/Sidebar.jsx';
 import Feed from '../components/Feed.jsx';
 import Widgets from '../components/Widgets.jsx';
-import { db } from '../firebase.js';
+import { db } from '../firebaseConfig.js';
 
 export default function Home({ session, posts }) {
   if (!session) {
