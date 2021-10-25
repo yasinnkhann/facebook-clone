@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { getSession } from '../node_modules/next-auth/client';
+import { getSession } from 'next-auth/client';
 import Header from '../components/Header.jsx';
 import Login from '../components/Login.jsx';
 import Sidebar from '../components/Sidebar.jsx';
